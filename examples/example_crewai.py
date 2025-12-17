@@ -5,11 +5,11 @@ LangVoice SDK - CrewAI Integration Example
 This example shows how to use LangVoice with CrewAI.
 
 Requirements:
-    pip install crewai langvoice
+    pip install crewai langvoice-sdk
 """
 
 from crewai import Agent, Task, Crew, Process
-from langvoice_sdk.tools.crewai_tools import langvoice_sdkCrewAIToolkit
+from langvoice_sdk.tools.crewai_tools import LangVoiceCrewAIToolkit
 
 # ============================================
 # CONFIGURATION - Set your API keys once
@@ -63,7 +63,7 @@ def main():
 # Alternative: Simple usage without Crew
 def simple_usage():
     """Simple usage of LangVoice with CrewAI toolkit."""
-    from langvoice_sdk.tools.crewai_tools import langvoice_sdkTTSTool
+    from langvoice_sdk.tools.crewai_tools import LangVoiceTTSTool
     
     # Create TTS tool
     tts_tool = LangVoiceTTSTool(api_key=LANGVOICE_API_KEY)

@@ -5,11 +5,11 @@ LangVoice SDK - AutoGen Integration Example
 This example shows how to use LangVoice with Microsoft AutoGen.
 
 Requirements:
-    pip install pyautogen langvoice
+    pip install pyautogen langvoice-sdk
 """
 
 from autogen import AssistantAgent, UserProxyAgent, config_list_from_json
-from langvoice_sdk.tools.autogen_tools import langvoice_sdkAutoGenToolkit
+from langvoice_sdk.tools.autogen_tools import LangVoiceAutoGenToolkit
 
 # ============================================
 # CONFIGURATION - Set your API keys once

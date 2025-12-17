@@ -6,10 +6,10 @@ This example shows how to use LangVoice with ANY AI framework.
 The generic toolkit works with: LlamaIndex, Semantic Kernel, Haystack, custom frameworks, etc.
 
 Requirements:
-    pip install langvoice
+    pip install langvoice-sdk
 """
 
-from langvoice_sdk.tools import langvoice_sdkToolkit
+from langvoice_sdk.tools import LangVoiceToolkit
 
 # ============================================
 # CONFIGURATION - Set your API key once

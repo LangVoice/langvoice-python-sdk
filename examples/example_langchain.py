@@ -5,13 +5,13 @@ LangVoice SDK - LangChain Integration Example
 This example shows how to use LangVoice with LangChain agents.
 
 Requirements:
-    pip install langchain langchain-openai langvoice
+    pip install langchain langchain-openai langvoice-sdk
 """
 
 from langchain_openai import ChatOpenAI
 from langchain.agents import AgentExecutor, create_openai_tools_agent
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langvoice_sdk.tools.langchain_tools import langvoice_sdkLangChainToolkit
+from langvoice_sdk.tools.langchain_tools import LangVoiceLangChainToolkit
 
 # ============================================
 # CONFIGURATION - Set your API keys once

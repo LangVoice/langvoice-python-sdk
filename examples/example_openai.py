@@ -6,13 +6,13 @@ This example shows how to use LangVoice with OpenAI function calling.
 The cleanest way - set API key once, handle all tool calls easily.
 
 Requirements:
-    pip install openai langvoice
+    pip install openai langvoice-sdk
 """
 
 import json
 import base64
 from openai import OpenAI
-from langvoice_sdk.tools import langvoice_sdkOpenAITools
+from langvoice_sdk.tools import LangVoiceOpenAITools
 
 # ============================================
 # CONFIGURATION - Set your API keys once
