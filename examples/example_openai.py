@@ -12,7 +12,7 @@ Requirements:
 import json
 import base64
 from openai import OpenAI
-from langvoice.tools import LangVoiceOpenAITools
+from langvoice_sdk.tools import langvoice_sdkOpenAITools
 
 # ============================================
 # CONFIGURATION - Set your API keys once

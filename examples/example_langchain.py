@@ -11,7 +11,7 @@ Requirements:
 from langchain_openai import ChatOpenAI
 from langchain.agents import AgentExecutor, create_openai_tools_agent
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langvoice.tools.langchain_tools import LangVoiceLangChainToolkit
+from langvoice_sdk.tools.langchain_tools import langvoice_sdkLangChainToolkit
 
 # ============================================
 # CONFIGURATION - Set your API keys once

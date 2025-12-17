@@ -7,7 +7,7 @@
 
 
 <p align="center">
-  <a href="https://badge.fury.io/py/langvoice"><img src="https://badge.fury.io/py/langvoice.svg" alt="PyPI version"></a>
+  <a href="https://badge.fury.io/py/langvoice-sdk"><img src="https://badge.fury.io/py/langvoice-sdk.svg" alt="PyPI version"></a>
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="Python 3.8+"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
 </p>
@@ -32,16 +32,16 @@
 ## 📦 Installation
 
 ```bash
-pip install langvoice
+pip install langvoice-sdk
 ```
 
 With optional dependencies:
 ```bash
 # For LangChain integration
-pip install langvoice[langchain]
+pip install langvoice-sdk[langchain]
 
 # For all AI frameworks
-pip install langvoice openai langchain crewai pyautogen
+pip install langvoice-sdk openai langchain crewai pyautogen
 ```
 
 ---
@@ -65,7 +65,7 @@ export LANGVOICE_API_KEY="your-api-key"
 ### Generate Speech
 
 ```python
-from langvoice import LangVoiceClient
+from langvoice_sdk import langvoice_sdkClient
 
 # Initialize client
 client = LangVoiceClient(api_key="your-api-key")
@@ -92,7 +92,7 @@ print(f"Characters: {response.characters_processed}")
 Create conversations or podcasts with multiple voices:
 
 ```python
-from langvoice import LangVoiceClient
+from langvoice_sdk import langvoice_sdkClient
 
 client = LangVoiceClient(api_key="your-api-key")
 
@@ -109,7 +109,7 @@ with open("podcast.mp3", "wb") as f:
 ### List Available Voices
 
 ```python
-from langvoice import LangVoiceClient
+from langvoice_sdk import langvoice_sdkClient
 
 client = LangVoiceClient(api_key="your-api-key")
 
@@ -129,7 +129,7 @@ michael: Michael (male)
 ### List Supported Languages
 
 ```python
-from langvoice import LangVoiceClient
+from langvoice_sdk import langvoice_sdkClient
 
 client = LangVoiceClient(api_key="your-api-key")
 
@@ -161,7 +161,7 @@ For high-performance applications, use the async client:
 
 ```python
 import asyncio
-from langvoice.async_client import AsyncLangVoiceClient
+from langvoice_sdk.async_client import AsyncLangVoiceClient
 
 async def main():
     async with AsyncLangVoiceClient(api_key="your-api-key") as client:
@@ -184,7 +184,7 @@ if __name__ == "__main__":
 
 ```python
 import asyncio
-from langvoice.async_client import AsyncLangVoiceClient
+from langvoice_sdk.async_client import AsyncLangVoiceClient
 
 async def main():
     async with AsyncLangVoiceClient(api_key="your-api-key") as client:
@@ -204,7 +204,7 @@ if __name__ == "__main__":
 
 ```python
 import asyncio
-from langvoice.async_client import AsyncLangVoiceClient
+from langvoice_sdk.async_client import AsyncLangVoiceClient
 
 async def main():
     async with AsyncLangVoiceClient(api_key="your-api-key") as client:
@@ -230,7 +230,7 @@ LangVoice integrates seamlessly with popular AI agent frameworks.
 
 ```python
 from openai import OpenAI
-from langvoice.tools import LangVoiceOpenAITools
+from langvoice_sdk.tools import langvoice_sdkOpenAITools
 
 # Set API keys once
 openai_client = OpenAI(api_key="your-openai-key")
@@ -266,7 +266,7 @@ if response.choices[0].message.tool_calls:
 from langchain_openai import ChatOpenAI
 from langchain.agents import AgentExecutor, create_openai_tools_agent
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langvoice.tools.langchain_tools import LangVoiceLangChainToolkit
+from langvoice_sdk.tools.langchain_tools import langvoice_sdkLangChainToolkit
 
 # Initialize toolkit - API key set once
 toolkit = LangVoiceLangChainToolkit(api_key="your-langvoice-key")
@@ -300,7 +300,7 @@ print(f"Result: {result['output']}")
 
 ```python
 from autogen import AssistantAgent, UserProxyAgent
-from langvoice.tools.autogen_tools import LangVoiceAutoGenToolkit
+from langvoice_sdk.tools.autogen_tools import langvoice_sdkAutoGenToolkit
 
 # Initialize toolkit
 toolkit = LangVoiceAutoGenToolkit(api_key="your-langvoice-key")
@@ -333,7 +333,7 @@ toolkit.save_audio_from_result(result, "output.mp3")
 
 ```python
 from crewai import Agent, Task, Crew
-from langvoice.tools.crewai_tools import LangVoiceCrewAIToolkit
+from langvoice_sdk.tools.crewai_tools import langvoice_sdkCrewAIToolkit
 
 # Initialize toolkit
 toolkit = LangVoiceCrewAIToolkit(api_key="your-langvoice-key")
@@ -364,7 +364,7 @@ result = crew.kickoff()
 Works with ANY AI framework (LlamaIndex, Semantic Kernel, Haystack, custom frameworks):
 
 ```python
-from langvoice.tools import LangVoiceToolkit
+from langvoice_sdk.tools import langvoice_sdkToolkit
 
 # Initialize toolkit
 toolkit = LangVoiceToolkit(api_key="your-langvoice-key")
@@ -507,11 +507,11 @@ All AI integrations provide these 4 tools:
 
 | Framework | Class | Import |
 |-----------|-------|--------|
-| OpenAI | `LangVoiceOpenAITools` | `from langvoice.tools import LangVoiceOpenAITools` |
-| LangChain | `LangVoiceLangChainToolkit` | `from langvoice.tools.langchain_tools import LangVoiceLangChainToolkit` |
-| AutoGen | `LangVoiceAutoGenToolkit` | `from langvoice.tools.autogen_tools import LangVoiceAutoGenToolkit` |
-| CrewAI | `LangVoiceCrewAIToolkit` | `from langvoice.tools.crewai_tools import LangVoiceCrewAIToolkit` |
-| Generic | `LangVoiceToolkit` | `from langvoice.tools import LangVoiceToolkit` |
+| OpenAI | `LangVoiceOpenAITools` | `from langvoice_sdk.tools import langvoice_sdkOpenAITools` |
+| LangChain | `LangVoiceLangChainToolkit` | `from langvoice_sdk.tools.langchain_tools import langvoice_sdkLangChainToolkit` |
+| AutoGen | `LangVoiceAutoGenToolkit` | `from langvoice_sdk.tools.autogen_tools import langvoice_sdkAutoGenToolkit` |
+| CrewAI | `LangVoiceCrewAIToolkit` | `from langvoice_sdk.tools.crewai_tools import langvoice_sdkCrewAIToolkit` |
+| Generic | `LangVoiceToolkit` | `from langvoice_sdk.tools import langvoice_sdkToolkit` |
 
 ---
 

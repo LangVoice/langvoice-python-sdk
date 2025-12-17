@@ -14,7 +14,7 @@ except ImportError:
     BaseTool = object  # type: ignore
     BaseModel = object  # type: ignore
 
-from langvoice.client import LangVoiceClient
+from langvoice_sdk.client import LangVoiceClient
 
 
 def _check_langchain() -> None:
@@ -262,7 +262,7 @@ if LANGCHAIN_AVAILABLE:
         Example:
             >>> from langchain_openai import ChatOpenAI
             >>> from langchain.agents import create_openai_functions_agent, AgentExecutor
-            >>> from langvoice.tools.langchain_tools import LangVoiceLangChainToolkit
+            >>> from langvoice_sdk.tools.langchain_tools import LangVoiceLangChainToolkit
             >>> 
             >>> # Initialize once with API key
             >>> toolkit = LangVoiceLangChainToolkit(api_key="your-langvoice-key")
@@ -318,7 +318,7 @@ if LANGCHAIN_AVAILABLE:
         Example:
             >>> from langchain.agents import initialize_agent, AgentType
             >>> from langchain_openai import ChatOpenAI
-            >>> from langvoice.tools.langchain_tools import get_all_langchain_tools
+            >>> from langvoice_sdk.tools.langchain_tools import get_all_langchain_tools
             >>> 
             >>> tools = get_all_langchain_tools(api_key="your-langvoice-key")
             >>> llm = ChatOpenAI(model="gpt-4")

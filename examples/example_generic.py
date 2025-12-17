@@ -9,7 +9,7 @@ Requirements:
     pip install langvoice
 """
 
-from langvoice.tools import LangVoiceToolkit
+from langvoice_sdk.tools import langvoice_sdkToolkit
 
 # ============================================
 # CONFIGURATION - Set your API key once

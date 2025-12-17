@@ -9,7 +9,7 @@ Requirements:
 """
 
 from crewai import Agent, Task, Crew, Process
-from langvoice.tools.crewai_tools import LangVoiceCrewAIToolkit
+from langvoice_sdk.tools.crewai_tools import langvoice_sdkCrewAIToolkit
 
 # ============================================
 # CONFIGURATION - Set your API keys once
@@ -63,7 +63,7 @@ def main():
 # Alternative: Simple usage without Crew
 def simple_usage():
     """Simple usage of LangVoice with CrewAI toolkit."""
-    from langvoice.tools.crewai_tools import LangVoiceTTSTool
+    from langvoice_sdk.tools.crewai_tools import langvoice_sdkTTSTool
     
     # Create TTS tool
     tts_tool = LangVoiceTTSTool(api_key=LANGVOICE_API_KEY)

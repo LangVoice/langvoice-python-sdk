@@ -6,7 +6,7 @@ from typing import Optional, Union, List
 
 import requests
 
-from langvoice.models import (
+from langvoice_sdk.models import (
     Voice,
     Language,
     GenerateRequest,
@@ -15,7 +15,7 @@ from langvoice.models import (
     LanguagesResponse,
     GenerateResponse,
 )
-from langvoice.exceptions import (
+from langvoice_sdk.exceptions import (
     LangVoiceError,
     AuthenticationError,
     RateLimitError,

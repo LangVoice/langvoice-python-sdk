@@ -4,7 +4,7 @@ import json
 import base64
 from typing import Any, Dict, List, Optional, Callable
 
-from langvoice.client import LangVoiceClient
+from langvoice_sdk.client import LangVoiceClient
 
 
 # OpenAI tool definitions
@@ -122,7 +122,7 @@ def get_openai_tools() -> List[Dict[str, Any]]:
 
     Example:
         >>> from openai import OpenAI
-        >>> from langvoice.tools import get_openai_tools
+        >>> from langvoice_sdk.tools import get_openai_tools
         >>>
         >>> client = OpenAI()
         >>> response = client.chat.completions.create(
@@ -154,7 +154,7 @@ def create_openai_tts_function(
         Function that processes tool call arguments and returns results.
 
     Example:
-        >>> from langvoice.tools import create_openai_tts_function
+        >>> from langvoice_sdk.tools import create_openai_tts_function
         >>> tts_function = create_openai_tts_function(api_key="your-key")
         >>> result = tts_function({"text": "Hello world", "voice": "heart"})
     """
@@ -274,7 +274,7 @@ class LangVoiceOpenAITools:
 
     Example:
         >>> from openai import OpenAI
-        >>> from langvoice.tools.openai_tools import LangVoiceOpenAITools
+        >>> from langvoice_sdk.tools.openai_tools import LangVoiceOpenAITools
         >>>
         >>> openai_client = OpenAI()
         >>> langvoice_tools = LangVoiceOpenAITools(api_key="your-langvoice-key")

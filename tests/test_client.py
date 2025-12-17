@@ -4,14 +4,14 @@ import pytest
 from unittest.mock import Mock, patch, MagicMock
 import json
 
-from langvoice import LangVoiceClient
-from langvoice.exceptions import (
+from langvoice_sdk import langvoice_sdkClient
+from langvoice_sdk.exceptions import (
     AuthenticationError,
     RateLimitError,
     ValidationError,
     APIError,
 )
-from langvoice.models import GenerateRequest, Voice, Language
+from langvoice_sdk.models import GenerateRequest, Voice, Language
 
 
 class TestLangVoiceClient:
@@ -173,7 +173,7 @@ class TestOpenAITools:
 
     def test_get_openai_tools(self) -> None:
         """Test getting OpenAI tool definitions."""
-        from langvoice.tools import get_openai_tools
+        from langvoice_sdk.tools import get_openai_tools
 
         tools = get_openai_tools()
         assert len(tools) == 3
@@ -182,7 +182,7 @@ class TestOpenAITools:
     @patch("langvoice.tools.openai_tools.LangVoiceClient")
     def test_handle_tool_call(self, mock_client_class: Mock) -> None:
         """Test handling OpenAI tool calls."""
-        from langvoice.tools import handle_openai_tool_call
+        from langvoice_sdk.tools import handle_openai_tool_call
 
         mock_client = Mock()
         mock_client.list_voices.return_value = [

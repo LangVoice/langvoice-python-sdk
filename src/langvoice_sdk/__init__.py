@@ -1,7 +1,7 @@
 """LangVoice Python SDK - Text-to-Speech API wrapper with AI agent integrations."""
 
-from langvoice.client import LangVoiceClient
-from langvoice.models import (
+from langvoice_sdk.client import LangVoiceClient
+from langvoice_sdk.models import (
     Voice,
     Language,
     GenerateRequest,
@@ -9,7 +9,7 @@ from langvoice.models import (
     VoicesResponse,
     LanguagesResponse,
 )
-from langvoice.exceptions import (
+from langvoice_sdk.exceptions import (
     LangVoiceError,
     AuthenticationError,
     RateLimitError,

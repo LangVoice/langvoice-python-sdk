@@ -11,7 +11,7 @@ try:
 except ImportError:
     AIOHTTP_AVAILABLE = False
 
-from langvoice.models import (
+from langvoice_sdk.models import (
     Voice,
     Language,
     GenerateRequest,
@@ -20,7 +20,7 @@ from langvoice.models import (
     LanguagesResponse,
     GenerateResponse,
 )
-from langvoice.exceptions import (
+from langvoice_sdk.exceptions import (
     AuthenticationError,
     RateLimitError,
     ValidationError,

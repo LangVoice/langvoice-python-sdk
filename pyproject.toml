@@ -3,16 +3,16 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "langvoice"
+name = "langvoice-sdk"
 version = "0.1.0"
 description = "Python SDK for LangVoice Text-to-Speech API with AI agent integrations"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.8"
 authors = [
-    {name = "Your Name", email = "your.email@example.com"}
+    {name = "LangVoice", email = "langvoice.official@gmail.com"}
 ]
-keywords = ["tts", "text-to-speech", "langvoice", "ai", "langchain", "openai"]
+keywords = ["tts", "text-to-speech", "langvoice", "ai", "langchain", "openai", "speech", "voice", "audio"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -52,10 +52,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/langvoice-python"
-Documentation = "https://github.com/yourusername/langvoice-python#readme"
-Repository = "https://github.com/yourusername/langvoice-python"
-Issues = "https://github.com/yourusername/langvoice-python/issues"
+Homepage = "https://www.langvoice.pro/"
+Documentation = "https://github.com/LangVoice/langvoice-python-sdk#readme"
+Repository = "https://github.com/LangVoice/langvoice-python-sdk"
+Issues = "https://github.com/LangVoice/langvoice-python-sdk/issues"
 
 [tool.hatch.build.targets.sdist]
 include = [
@@ -64,7 +64,7 @@ include = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/langvoice"]
+packages = ["src/langvoice_sdk"]
 
 [tool.black]
 line-length = 100

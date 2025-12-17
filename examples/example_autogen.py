@@ -9,7 +9,7 @@ Requirements:
 """
 
 from autogen import AssistantAgent, UserProxyAgent, config_list_from_json
-from langvoice.tools.autogen_tools import LangVoiceAutoGenToolkit
+from langvoice_sdk.tools.autogen_tools import langvoice_sdkAutoGenToolkit
 
 # ============================================
 # CONFIGURATION - Set your API keys once

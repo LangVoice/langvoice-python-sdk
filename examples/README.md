@@ -24,7 +24,7 @@ Set your API keys once at the top of each example file, and you're ready to go!
 
 ```python
 from openai import OpenAI
-from langvoice.tools import LangVoiceOpenAITools
+from langvoice_sdk.tools import langvoice_sdkOpenAITools
 
 # Set API keys once
 openai_client = OpenAI(api_key="your-openai-key")
@@ -49,7 +49,7 @@ for tool_call in response.choices[0].message.tool_calls:
 
 ```python
 from langchain_openai import ChatOpenAI
-from langvoice.tools.langchain_tools import LangVoiceLangChainToolkit
+from langvoice_sdk.tools.langchain_tools import langvoice_sdkLangChainToolkit
 
 # Initialize toolkit
 toolkit = LangVoiceLangChainToolkit(api_key="your-langvoice-key")
@@ -68,7 +68,7 @@ agent = create_openai_tools_agent(llm, tools, prompt)
 
 ```python
 from autogen import AssistantAgent, UserProxyAgent
-from langvoice.tools.autogen_tools import LangVoiceAutoGenToolkit
+from langvoice_sdk.tools.autogen_tools import langvoice_sdkAutoGenToolkit
 
 # Initialize toolkit
 toolkit = LangVoiceAutoGenToolkit(api_key="your-langvoice-key")
@@ -89,7 +89,7 @@ for func in toolkit.get_functions():
 
 ```python
 from crewai import Agent, Crew
-from langvoice.tools.crewai_tools import LangVoiceCrewAIToolkit
+from langvoice_sdk.tools.crewai_tools import langvoice_sdkCrewAIToolkit
 
 # Initialize toolkit
 toolkit = LangVoiceCrewAIToolkit(api_key="your-langvoice-key")
@@ -109,7 +109,7 @@ agent = Agent(
 Works with ANY framework: LlamaIndex, Semantic Kernel, Haystack, custom frameworks, etc.
 
 ```python
-from langvoice.tools import LangVoiceToolkit
+from langvoice_sdk.tools import langvoice_sdkToolkit
 
 # Initialize toolkit
 toolkit = LangVoiceToolkit(api_key="your-langvoice-key")

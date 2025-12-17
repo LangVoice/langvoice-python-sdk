@@ -7,7 +7,7 @@ import json
 import base64
 from typing import Any, Dict, List, Optional, Callable
 
-from langvoice.client import LangVoiceClient
+from langvoice_sdk.client import LangVoiceClient
 
 
 def langvoice_text_to_speech(
@@ -132,7 +132,7 @@ class LangVoiceAutoGenToolkit:
     
     Example:
         >>> from autogen import AssistantAgent, UserProxyAgent
-        >>> from langvoice.tools.autogen_tools import LangVoiceAutoGenToolkit
+        >>> from langvoice_sdk.tools.autogen_tools import LangVoiceAutoGenToolkit
         >>> 
         >>> # Initialize toolkit with API key
         >>> toolkit = LangVoiceAutoGenToolkit(api_key="your-langvoice-key")

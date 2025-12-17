@@ -8,7 +8,7 @@ import base64
 import json
 from typing import Any, Dict, List, Optional, Callable, Union
 
-from langvoice.client import LangVoiceClient
+from langvoice_sdk.client import LangVoiceClient
 
 
 class LangVoiceToolkit:
@@ -21,7 +21,7 @@ class LangVoiceToolkit:
     - Convenience methods for common operations
     
     Example:
-        >>> from langvoice.tools.generic_tools import LangVoiceToolkit
+        >>> from langvoice_sdk.tools.generic_tools import LangVoiceToolkit
         >>> 
         >>> # Initialize with API key
         >>> toolkit = LangVoiceToolkit(api_key="your-langvoice-key")

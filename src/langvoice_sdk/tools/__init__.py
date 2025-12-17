@@ -8,14 +8,14 @@ Supports multiple AI frameworks:
 - Generic: LangVoiceToolkit (works with any framework)
 """
 
-from langvoice.tools.openai_tools import (
+from langvoice_sdk.tools.openai_tools import (
     get_openai_tools,
     create_openai_tts_function,
     handle_openai_tool_call,
     LangVoiceOpenAITools,
 )
 
-from langvoice.tools.generic_tools import (
+from langvoice_sdk.tools.generic_tools import (
     LangVoiceToolkit,
     get_langvoice_toolkit,
 )
@@ -35,7 +35,7 @@ __all__ = [
 # Lazy imports for optional dependencies
 def get_langchain_tools():
     """Get LangChain tools (requires langchain-core)."""
-    from langvoice.tools.langchain_tools import (
+    from langvoice_sdk.tools.langchain_tools import (
         LangVoiceTTSTool,
         LangVoiceMultiVoiceTool,
         LangVoiceVoicesTool,
@@ -55,12 +55,12 @@ def get_langchain_tools():
 
 def get_autogen_toolkit():
     """Get AutoGen toolkit."""
-    from langvoice.tools.autogen_tools import LangVoiceAutoGenToolkit
+    from langvoice_sdk.tools.autogen_tools import LangVoiceAutoGenToolkit
     return LangVoiceAutoGenToolkit
 
 
 def get_crewai_toolkit():
     """Get CrewAI toolkit."""
-    from langvoice.tools.crewai_tools import LangVoiceCrewAIToolkit
+    from langvoice_sdk.tools.crewai_tools import LangVoiceCrewAIToolkit
     return LangVoiceCrewAIToolkit
 

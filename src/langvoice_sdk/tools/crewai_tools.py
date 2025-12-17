@@ -15,7 +15,7 @@ except ImportError:
     CrewAIBaseTool = object  # type: ignore
     BaseModel = object  # type: ignore
 
-from langvoice.client import LangVoiceClient
+from langvoice_sdk.client import LangVoiceClient
 
 
 def _check_crewai() -> None:
@@ -188,7 +188,7 @@ if CREWAI_AVAILABLE:
         
         Example:
             >>> from crewai import Agent, Task, Crew
-            >>> from langvoice.tools.crewai_tools import LangVoiceCrewAIToolkit
+            >>> from langvoice_sdk.tools.crewai_tools import LangVoiceCrewAIToolkit
             >>> 
             >>> toolkit = LangVoiceCrewAIToolkit(api_key="your-langvoice-key")
             >>> 
