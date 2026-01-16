@@ -43,6 +43,14 @@ class MultiVoiceRequest(BaseModel):
     speed: float = Field(default=1.0, ge=0.5, le=2.0, description="Speech speed (0.5-2.0)")
 
 
+class VoiceCloningRequest(BaseModel):
+    """Request model for voice cloning TTS generation."""
+
+    text: str = Field(..., max_length=5000, description="Text to convert to speech")
+    voice_sample_base64: str = Field(..., description="Base64 encoded voice sample audio")
+    speed: float = Field(default=1.0, ge=0.5, le=2.0, description="Speech speed (0.5-2.0)")
+
+
 class VoicesResponse(BaseModel):
     """Response model for voices endpoint."""
 

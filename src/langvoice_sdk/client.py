@@ -195,6 +195,73 @@ class LangVoiceClient:
             ),
         )
 
+    def generate_cloned(
+        self,
+        text: str,
+        voice_sample: Union[str, Path, bytes],
+        speed: float = 1.0,
+        output_path: Optional[Union[str, Path]] = None,
+    ) -> GenerateResponse:
+        """
+        Generate speech using a cloned voice from provided audio sample.
+
+        Args:
+            text: Text to convert to speech (max 5000 characters).
+            voice_sample: Path to audio file, or bytes of audio data.
+            speed: Speech speed from 0.5 to 2.0. Defaults to 1.0.
+            output_path: Optional path to save the audio file.
+
+        Returns:
+            GenerateResponse with audio data and metadata.
+
+        Example:
+            >>> client = LangVoiceClient(api_key="your-api-key")
+            >>> response = client.generate_cloned(
+            ...     "Hello, this is my cloned voice.",
+            ...     voice_sample="path/to/voice_sample.wav"
+            ... )
+            >>> with open("output.mp3", "wb") as f:
+            ...     f.write(response.audio_data)
+        """
+        import base64
+
+        # Convert voice sample to base64
+        if isinstance(voice_sample, bytes):
+            voice_sample_base64 = base64.b64encode(voice_sample).decode("utf-8")
+        elif isinstance(voice_sample, (str, Path)):
+            with open(voice_sample, "rb") as f:
+                voice_sample_base64 = base64.b64encode(f.read()).decode("utf-8")
+        else:
+            raise ValueError("voice_sample must be a file path or bytes")
+
+        from langvoice_sdk.models import VoiceCloningRequest
+        request = VoiceCloningRequest(
+            text=text,
+            voice_sample_base64=voice_sample_base64,
+            speed=speed
+        )
+
+        response = self._session.post(
+            f"{self.base_url}/tts/generate-cloned",
+            json=request.model_dump(),
+            timeout=self.timeout,
+        )
+        self._handle_response(response)
+
+        audio_data = response.content
+
+        if output_path:
+            Path(output_path).write_bytes(audio_data)
+
+        return GenerateResponse(
+            audio_data=audio_data,
+            duration=self._parse_float_header(response.headers.get("X-Audio-Duration")),
+            generation_time=self._parse_float_header(response.headers.get("X-Generation-Time")),
+            characters_processed=self._parse_int_header(
+                response.headers.get("X-Characters-Processed")
+            ),
+        )
+
     def list_voices(self) -> List[Voice]:
         """
         Get all available voices.

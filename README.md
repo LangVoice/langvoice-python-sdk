@@ -106,6 +106,28 @@ with open("podcast.mp3", "wb") as f:
     f.write(response.audio_data)
 ```
 
+### Voice Cloning
+
+Clone any voice from an audio sample and generate speech:
+
+```python
+from langvoice_sdk import LangVoiceClient
+
+client = LangVoiceClient(api_key="your-api-key")
+
+# Clone a voice from an audio sample
+response = client.generate_cloned(
+    text="Hello, this is my cloned voice speaking!",
+    voice_sample="path/to/voice_sample.wav",  # Path to audio file
+    speed=1.0
+)
+
+with open("cloned_voice.mp3", "wb") as f:
+    f.write(response.audio_data)
+
+print(f"Duration: {response.duration}s")
+```
+
 ### List Available Voices
 
 ```python
